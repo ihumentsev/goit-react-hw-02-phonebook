@@ -3,6 +3,7 @@ import ContactForm from './ContactForm/ContactForm';
 import shortid from 'shortid';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
+import css from '../components/App.module.css';
 
 class App extends Component {
   state = {
@@ -59,14 +60,7 @@ class App extends Component {
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
     return (
-      <div
-        style={{
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: ' column',
-          alignItems: 'center',
-        }}
-      >
+      <div className={css.conteiner}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
